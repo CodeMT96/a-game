@@ -3,7 +3,7 @@ const animationSet = {
     walk: "Walk",
     run: "Run",
     jump: "Jump_Start",
-    jumpIdle: "Jump_Idle",
+    jumpIdle: "Falling",
     jumpLand: "Landing",
     fall: "Falling",
     action1: "Wave",
