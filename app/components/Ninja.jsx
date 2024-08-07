@@ -15,6 +15,6 @@ export default function Ninja() {
     }
   });
   return (
-        <primitive position={[0,-1,0]} object={gltf.scene} />
+        <primitive position={[0,-0.8,0]} object={gltf.scene} />
   );
 }
