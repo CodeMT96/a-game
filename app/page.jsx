@@ -7,6 +7,11 @@ import { Physics } from "@react-three/rapier";
 import { Suspense } from "react";
 import Ecctrl, { EcctrlAnimation } from "ecctrl";
 import keyboardMap from "./components/keyboardControlls";
+import Ninja from "./components/Ninja";
+import animationSet from "./components/animationsSet";
+
+const characterURL = "./ninja.glb"
+
 
 export default function Game() {
   return (
@@ -14,10 +19,15 @@ export default function Game() {
       <Canvas>
         <Physics debug>
           <Suspense>
+            {/* {debugging} */}
             {/* <OrbitControls /> */}
-            <KeyboardControls map={keyboardMap}>
-              <Ecctrl debug>
+            <Stats />
 
+            <KeyboardControls map={keyboardMap}>
+              <Ecctrl animated debug>
+              <EcctrlAnimation characterURL={characterURL}
+              animationSet={animationSet}><Ninja /></EcctrlAnimation>
+                
               </Ecctrl>
             </KeyboardControls>
             <Lights />
