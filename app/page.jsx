@@ -10,13 +10,12 @@ import keyboardMap from "./components/keyboardControlls";
 import Ninja from "./components/Ninja";
 import animationSet from "./components/animationsSet";
 
-const characterURL = "./ninja.glb"
-
+const characterURL = "./ninja.glb";
 
 export default function Game() {
   return (
     <div className="container">
-      <Canvas>
+      <Canvas shadows>
         <Physics debug>
           <Suspense>
             {/* {debugging} */}
@@ -24,10 +23,13 @@ export default function Game() {
             <Stats />
 
             <KeyboardControls map={keyboardMap}>
-              <Ecctrl animated debug>
-              <EcctrlAnimation characterURL={characterURL}
-              animationSet={animationSet}><Ninja /></EcctrlAnimation>
-                
+              <Ecctrl animated debug sprintMult={4.00}>
+                <EcctrlAnimation
+                  characterURL={characterURL}
+                  animationSet={animationSet}
+                >
+                  <Ninja />
+                </EcctrlAnimation>
               </Ecctrl>
             </KeyboardControls>
             <Lights />

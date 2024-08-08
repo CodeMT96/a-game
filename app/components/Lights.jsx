@@ -8,7 +8,7 @@ export default function Lights() {
   useHelper(lightRef, DirectionalLightHelper, 5, "red");
   return (
     <>
-      <ambientLight color={"lightblue"} />
+      <ambientLight color={"white"} />
       <directionalLight position={[0, 5, 5]} ref={lightRef} castShadow />
     </>
   );

@@ -6,10 +6,10 @@ const animationSet = {
     jumpIdle: "Falling",
     jumpLand: "Landing",
     fall: "Falling",
-    action1: "Wave",
+    action1: "Unsheath",
     action2: "Dance",
     action3: "Cheer",
-    action4: "Attack(1h)",
+    action4: "Slash",
   };
 
   export default animationSet
