@@ -3,7 +3,7 @@ import { RigidBody } from "@react-three/rapier";
 import { useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-export default function Lab() {
+export default function Level() {
   const gltf = useLoader(GLTFLoader, "./fort.glb");
   const labRef = useRef(gltf);
   console.log(RigidBody);
@@ -15,7 +15,7 @@ export default function Lab() {
     }
   });
   return (
-    <group position={[0,-1,70]} scale={1.5}>
+    <group position={[0, -1, 70]} scale={1.5}>
       <RigidBody type="fixed" ref={labRef} colliders="trimesh">
         <primitive object={gltf.scene} />
       </RigidBody>
