@@ -9,3 +9,18 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+.uiCollected {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 99;
+  background-color: orange;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 50%;
+}
