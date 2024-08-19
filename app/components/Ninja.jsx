@@ -14,7 +14,6 @@ export default function Ninja() {
       object.receiveShadow = true;
     }
   });
-  return (
-        <primitive position={[0,-0.8,0]} object={gltf.scene} />
-  );
+
+  return <primitive position={[0, -0.9, 0]} object={gltf.scene} />;
 }

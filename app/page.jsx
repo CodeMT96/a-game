@@ -9,6 +9,7 @@ import Ecctrl, { EcctrlAnimation } from "ecctrl";
 import keyboardMap from "./components/keyboardControlls";
 import Ninja from "./components/Ninja";
 import animationSet from "./components/animationsSet";
+import Scroll from "./components/Scroll";
 
 const characterURL = "./ninja.glb";
 
@@ -23,7 +24,7 @@ export default function Game() {
             <Stats />
 
             <KeyboardControls map={keyboardMap}>
-              <Ecctrl animated debug sprintMult={4.00}>
+              <Ecctrl animated debug sprintMult={4.0}>
                 <EcctrlAnimation
                   characterURL={characterURL}
                   animationSet={animationSet}
@@ -32,6 +33,7 @@ export default function Game() {
                 </EcctrlAnimation>
               </Ecctrl>
             </KeyboardControls>
+            <Scroll />
             <Lights />
             <Level />
           </Suspense>
