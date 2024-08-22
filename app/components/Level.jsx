@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function Lab() {
-  const gltf = useLoader(GLTFLoader, "./finalMap.glb");
+  const gltf = useLoader(GLTFLoader, "./map.glb");
   const labRef = useRef(gltf);
   console.log(RigidBody);
 

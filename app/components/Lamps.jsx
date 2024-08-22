@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function Lamp() {
-  const gltf = useLoader(GLTFLoader, "./lamp.glb");
+  const gltf = useLoader(GLTFLoader, "./lampsFinal.glb");
   const LampRef = useRef(gltf);
 
   gltf.scene.traverse((object) => {
@@ -18,7 +18,6 @@ export default function Lamp() {
       <group visible={true} position={[0, -1, 70]} scale={1.5}>
         <RigidBody type="fixed" ref={LampRef} colliders="hull">
           <primitive object={gltf.scene} />
-          <pointLight ref={LampRef} position={[0,2,0]} intensity={10} color={"yellow"}/>
         </RigidBody>
       </group>
     </>
