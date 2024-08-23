@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import Lights from "./components/Lights";
 import Level from "./components/Level";
 import LevelCollider from "./components/LevelCollider"
+import ScrollCollectible from "./components/ScrollCollectible"
 import Trees from "./components/Trees"
 import { Physics } from "@react-three/rapier";
 import { Suspense } from "react";
@@ -29,7 +30,7 @@ export default function Game() {
             <Stats />
 
             <KeyboardControls map={keyboardMap}>
-              <Ecctrl animated debug sprintMult={4.00}>
+              <Ecctrl animated debug sprintMult={4.00} mode="FixedCamera">
                 <EcctrlAnimation
                   characterURL={characterURL}
                   animationSet={animationSet}
@@ -43,6 +44,7 @@ export default function Game() {
             <LevelCollider/>
             <Trees/>
             <Lamp/>
+            <ScrollCollectible/>
           </Suspense>
         </Physics>
       </Canvas>
