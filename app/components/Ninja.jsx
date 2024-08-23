@@ -6,7 +6,7 @@ import { useAppContext } from "../AppContext";
 export default function Ninja() {
   const gltf = useLoader(GLTFLoader, "./ninja.glb");
   const playerRef = useRef(gltf.scene);
-  const { playerPosition, setPlayerPosition } = useAppContext();
+  const { playerPosition } = useAppContext();
 
   gltf.scene.traverse((object) => {
     if (object.isMesh) {
