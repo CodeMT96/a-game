@@ -8,7 +8,6 @@ import { RigidBody } from "@react-three/rapier";
 export default function Scroll({ position = [0, -0.5, 0] }) {
   const gltf = useLoader(GLTFLoader, "./scroll.glb");
   const scene = useMemo(() => gltf.scene.clone(), [gltf]);
-  const scrollRef = useRef();
   const [visible, setVisible] = useState(true);
 
   const { setItemsCollected } = useAppContext();
@@ -22,11 +21,6 @@ export default function Scroll({ position = [0, -0.5, 0] }) {
       object.receiveShadow = true;
     }
   });
-
-  const handlePointerMove = (event) => {
-    pointer.current.x = (event.clientX / window.innerWidth) * 2 - 1;
-    pointer.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
-  };
 
   const handlePointerClick = () => {
     setItemsCollected((prev) => prev + 1);

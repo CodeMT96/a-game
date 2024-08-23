@@ -19,9 +19,9 @@ import {
   UICollectedItems,
   Lights,
   Lamp,
-  keyboardMap,
-  animationSet,
 } from "./components";
+import keyboardMap from "./utility/keyboardControlls";
+import animationSet from "./utility/animationsSet";
 import { AppProvider } from "./AppContext";
 
 const characterURL = "./ninja.glb";

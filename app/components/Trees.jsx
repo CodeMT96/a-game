@@ -5,7 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function Tree() {
   const gltf = useLoader(GLTFLoader, "./treeMap.glb");
-  const TreeRef = useRef(gltf);
+  const treeRef = useRef(gltf);
 
   gltf.scene.traverse((object) => {
     if (object.isMesh) {
@@ -14,8 +14,8 @@ export default function Tree() {
     }
   });
   return (
-    <group visible={true} position={[0,-1,70]} scale={1.5}>
-      <RigidBody type="fixed" ref={TreeRef} colliders="hull">
+    <group visible={true} position={[0, -1, 70]} scale={1.5}>
+      <RigidBody type="fixed" ref={treeRef} colliders="hull">
         <primitive object={gltf.scene} />
       </RigidBody>
     </group>
