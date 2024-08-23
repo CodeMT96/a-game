@@ -1,12 +1,12 @@
-import { useLoader } from "@react-three/fiber";
-import { RigidBody } from "@react-three/rapier";
 import { useRef } from "react";
+import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { useAppContext } from "../AppContext";
 
 export default function Ninja() {
   const gltf = useLoader(GLTFLoader, "./ninja.glb");
-  const playerRef = useRef(gltf);
-  console.log(RigidBody);
+  const playerRef = useRef(gltf.scene);
+  const { playerPosition, setPlayerPosition } = useAppContext();
 
   gltf.scene.traverse((object) => {
     if (object.isMesh) {
@@ -14,7 +14,8 @@ export default function Ninja() {
       object.receiveShadow = true;
     }
   });
+
   return (
-        <primitive position={[0,-0.8,0]} object={gltf.scene} />
+    <primitive object={gltf.scene} position={playerPosition} ref={playerRef} />
   );
 }

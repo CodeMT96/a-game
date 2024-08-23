@@ -1,30 +1,37 @@
 "use client";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { KeyboardControls, OrbitControls, Stats } from "@react-three/drei";
 import { Cloud, Clouds, Environment, KeyboardControls, OrbitControls, Sky, Stars, Stats } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Lights from "./components/Lights";
-import Level from "./components/Level";
 import LevelCollider from "./components/LevelCollider"
 import ScrollCollectible from "./components/ScrollCollectible"
 import Trees from "./components/Trees"
 import { Physics } from "@react-three/rapier";
-import { Suspense } from "react";
 import Ecctrl, { EcctrlAnimation } from "ecctrl";
-import keyboardMap from "./components/keyboardControlls";
-import Ninja from "./components/Ninja";
-import animationSet from "./components/animationsSet";
+import {
+  Ninja,
+  Level,
+  Scroll,
+  UICollectedItems,
+  Lights,
+  keyboardMap,
+  animationSet,
+} from "./components";
+import { AppProvider } from "./AppContext";
 import Lamp from "./components/Lamps";
-
 
 const characterURL = "./ninja.glb";
 
-export default function Game() {
-  return (
+
+    <AppProvider>
     <div className="container">
+       <UICollectedItems />
       <Canvas shadows>
       <Sky sunPosition={[0,0.1,0.1]} mieDirectionalG={1} mieCoefficient={0.1} rayleigh={0} turbidity={0.01}/>
       <Stars/>
         <Physics debug>
-          <Suspense>
+          <Suspense fallback={null}>
             {/* {debugging} */}
             {/* <OrbitControls /> */}
             <Stats />
@@ -44,10 +51,11 @@ export default function Game() {
             <LevelCollider/>
             <Trees/>
             <Lamp/>
-            <ScrollCollectible/>
+            <Scroll position={[5, -0.5, 0]} />
           </Suspense>
         </Physics>
       </Canvas>
     </div>
+ </AppProvider>
   );
 }
