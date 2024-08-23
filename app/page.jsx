@@ -1,8 +1,8 @@
 "use client";
-import { KeyboardControls, OrbitControls, Stats } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { Physics } from "@react-three/rapier";
 import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { KeyboardControls, OrbitControls, Stats } from "@react-three/drei";
+import { Physics } from "@react-three/rapier";
 import Ecctrl, { EcctrlAnimation } from "ecctrl";
 import {
   Ninja,
@@ -24,8 +24,7 @@ export default function Game() {
         <UICollectedItems />
         <Canvas shadows>
           <Physics debug>
-            <Suspense>
-              {/* <OrbitControls /> */}
+            <Suspense fallback={null}>
               <Stats />
 
               <KeyboardControls map={keyboardMap}>
@@ -43,6 +42,7 @@ export default function Game() {
               <Scroll position={[10, -0.5, 0]} />
               <Scroll position={[15, -0.5, 0]} />
               <Scroll position={[20, -0.5, 0]} />
+
               <Lights />
               <Level />
             </Suspense>
