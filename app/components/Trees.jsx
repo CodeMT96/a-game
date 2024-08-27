@@ -13,6 +13,7 @@ export default function Tree() {
       object.receiveShadow = true;
     }
   });
+
   return (
     <group visible={true} position={[0, -1, 70]} scale={1.5}>
       <RigidBody type="fixed" ref={treeRef} colliders="hull">

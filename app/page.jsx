@@ -8,13 +8,13 @@ import {
   Stars,
   Stats,
 } from "@react-three/drei";
-import LevelCollider from "./components/LevelCollider";
 import Trees from "./components/Trees";
 import { Physics } from "@react-three/rapier";
 import Ecctrl, { EcctrlAnimation } from "ecctrl";
 import {
   Ninja,
   Level,
+  LevelCollider,
   Scroll,
   UICollectedItems,
   Lights,

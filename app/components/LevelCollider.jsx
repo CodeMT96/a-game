@@ -3,7 +3,7 @@ import { RigidBody } from "@react-three/rapier";
 import { useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-export default function map() {
+export default function LevelCollider() {
   const gltf = useLoader(GLTFLoader, "./colliderMap.glb");
   const mapRef = useRef(gltf);
 
@@ -13,8 +13,9 @@ export default function map() {
       object.receiveShadow = true;
     }
   });
+
   return (
-    <group visible={false} position={[0,-1.1,70]} scale={1.5}>
+    <group visible={false} position={[0, -1.1, 70]} scale={1.5}>
       <RigidBody type="fixed" ref={mapRef} colliders="trimesh">
         <primitive object={gltf.scene} />
       </RigidBody>
