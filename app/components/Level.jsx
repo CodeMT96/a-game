@@ -12,7 +12,7 @@ export default function Level() {
   });
 
   return (
-    <group position={[0, -1, 70]} scale={1.5}>
+    <group position={[0, -1.1, 70]} scale={1.5}>
       <primitive object={gltf.scene} />
     </group>
   );
