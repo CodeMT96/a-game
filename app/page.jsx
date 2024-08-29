@@ -8,20 +8,20 @@ import {
   Stars,
   Stats,
 } from "@react-three/drei";
-import LevelCollider from "./components/LevelCollider";
 import Trees from "./components/Trees";
 import { Physics } from "@react-three/rapier";
 import Ecctrl, { EcctrlAnimation } from "ecctrl";
 import {
   Ninja,
   Level,
+  LevelCollider,
   Scroll,
   UICollectedItems,
   Lights,
   Lamp,
-  keyboardMap,
-  animationSet,
 } from "./components";
+import keyboardMap from "./utility/keyboardControlls";
+import animationSet from "./utility/animationsSet";
 import { AppProvider } from "./AppContext";
 
 const characterURL = "./ninja.glb";
