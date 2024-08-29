@@ -14,6 +14,8 @@ export default function Lamp() {
     }
   });
 
+ 
+
   return (
     <>
       <group visible={true} position={[0, -1, 70]} scale={1.5}>

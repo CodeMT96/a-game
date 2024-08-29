@@ -61,7 +61,7 @@ export default function Game() {
               <LevelCollider />
               <Trees />
               <Lamp />
-              <Scroll position={[5, -0.5, 0]} />
+              <Scroll position={[-70, 0.5, 70]} />
             </Suspense>
           </Physics>
         </Canvas>
