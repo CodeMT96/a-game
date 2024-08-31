@@ -6,7 +6,7 @@ import { useAppContext } from "../AppContext";
 import { RigidBody } from "@react-three/rapier";
 
 export default function Scroll({ position = [0, -0.5, 0] }) {
-  const gltf = useLoader(GLTFLoader, "./scroll.glb");
+  const gltf = useLoader(GLTFLoader, "./scrollLowPerf.glb");
   const scene = useMemo(() => gltf.scene.clone(), [gltf]);
   const [visible, setVisible] = useState(true);
 
