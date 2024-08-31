@@ -19,6 +19,7 @@ import {
   UICollectedItems,
   Lights,
   Lamp,
+  Scrolls,
 } from "./components";
 import keyboardMap from "./utility/keyboardControlls";
 import animationSet from "./utility/animationsSet";
@@ -56,12 +57,13 @@ export default function Game() {
                   </EcctrlAnimation>
                 </Ecctrl>
               </KeyboardControls>
+
               <Lights />
               <Level />
               <LevelCollider />
               <Trees />
               <Lamp />
-              <Scroll position={[10, 0.5, 0]} />
+              <Scrolls />
             </Suspense>
           </Physics>
         </Canvas>

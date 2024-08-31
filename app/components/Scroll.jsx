@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo } from "react";
+import { useRef, useState, useMemo } from "react";
 import { Raycaster } from "three";
 import { useLoader, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -22,7 +22,7 @@ export default function Scroll({ position = [0, -0.5, 0] }) {
     }
   });
 
-  const handlePointerClick = () => {
+  const handleItemCollect = () => {
     setItemsCollected((prev) => prev + 1);
     setVisible(false);
   };
@@ -36,7 +36,7 @@ export default function Scroll({ position = [0, -0.5, 0] }) {
   return (
     visible && (
       <group position={position} scale={0.1}>
-        <RigidBody type="fixed" sensor onIntersectionEnter={handlePointerClick}>
+        <RigidBody type="fixed" sensor onIntersectionEnter={handleItemCollect}>
           <primitive object={scene} />
         </RigidBody>
       </group>
