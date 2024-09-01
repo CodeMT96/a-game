@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [playerPosition, setPlayerPosition] = useState([0, -0.9, 0]);
-  const [itemsCollected, setItemsCollected] = useState(5);
+  const [itemsCollected, setItemsCollected] = useState(0);
   const [levelCompleted, setLevelCompleted] = useState(false);
 
   return (

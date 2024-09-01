@@ -2,11 +2,11 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
-  KeyboardControls,
   OrbitControls,
+  Stats,
+  KeyboardControls,
   Sky,
   Stars,
-  Stats,
 } from "@react-three/drei";
 import Trees from "./components/Trees";
 import { Physics } from "@react-three/rapier";
@@ -49,7 +49,7 @@ export default function Game() {
               {/* <Stats /> */}
 
               <KeyboardControls map={keyboardMap}>
-                <Ecctrl animated debug sprintMult={4.0}>
+                <Ecctrl animated sprintMult={4.0}>
                   <EcctrlAnimation
                     characterURL={characterURL}
                     animationSet={animationSet}
