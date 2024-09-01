@@ -1,5 +1,5 @@
 "use client";
-import { Suspense } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -28,12 +28,41 @@ import { AppProvider } from "./AppContext";
 const characterURL = "./ninja.glb";
 
 export default function Game() {
+  const canvasRef = useRef();
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+
+    const handlePointerLockChange = () => {
+      if (document.pointerLockElement === canvas) {
+        console.log("Pointer locked!");
+      } else {
+        console.log("Pointer unlocked!");
+      }
+    };
+
+    document.addEventListener("pointerlockchange", handlePointerLockChange);
+
+    return () => {
+      document.removeEventListener(
+        "pointerlockchange",
+        handlePointerLockChange
+      );
+    };
+  }, []);
+
+  const handleClick = () => {
+    if (canvasRef.current) {
+      canvasRef.current.requestPointerLock();
+    }
+  };
+
   return (
     <AppProvider>
       <div className="container">
         <UICollectedItems />
         <UILevelCompleted />
-        <Canvas>
+        <Canvas ref={canvasRef} onClick={handleClick}>
           <Sky
             sunPosition={[0, 0.1, 0.1]}
             mieDirectionalG={1}
