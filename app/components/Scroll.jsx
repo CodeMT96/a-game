@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useAppContext } from "../AppContext";
@@ -8,7 +8,7 @@ export default function Scroll({ position = [0, -0.5, 0] }) {
   const gltf = useLoader(GLTFLoader, "./scrollLowPerf.glb");
   const scene = useMemo(() => gltf.scene.clone(), [gltf]);
   const [visible, setVisible] = useState(true);
-  let lockItemCollect = false;
+  const lockItemCollect = useRef(false);
 
   const { setItemsCollected } = useAppContext();
 
@@ -20,12 +20,12 @@ export default function Scroll({ position = [0, -0.5, 0] }) {
   });
 
   const handleItemCollect = () => {
-    if (lockItemCollect === false) {
-      lockItemCollect = true;
+    if (!lockItemCollect.current) {
+      lockItemCollect.current = true;
       setItemsCollected((prev) => prev + 1);
       setVisible(false);
       setTimeout(() => {
-        lockItemCollect = false;
+        lockItemCollect.current = false;
       }, 500);
     }
   };
