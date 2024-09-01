@@ -14,7 +14,7 @@ export default function Lights() {
         position={[0, 10, 10]}
         ref={lightRef}
         castShadow
-        intensity={0.5}
+        intensity={0.2}
       />
     </>
   );

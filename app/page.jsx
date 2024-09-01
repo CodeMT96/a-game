@@ -33,7 +33,7 @@ export default function Game() {
       <div className="container">
         <UICollectedItems />
         <UILevelCompleted />
-        <Canvas shadows>
+        <Canvas>
           <Sky
             sunPosition={[0, 0.1, 0.1]}
             mieDirectionalG={1}
@@ -41,8 +41,8 @@ export default function Game() {
             rayleigh={0}
             turbidity={0.01}
           />
-          <Stars />
-          <Physics debug>
+          <Stars depth={200}/>
+          <Physics>
             <Suspense fallback={null}>
               {/* {debugging} */}
               {/* <OrbitControls /> */}

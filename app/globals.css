@@ -1,3 +1,8 @@
+@font-face {
+  font-family: NanumBrush;
+  src: url("../public/NanumBrushScript-Regular.ttf");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -15,14 +20,16 @@ body {
   bottom: 0.5rem;
   right: 0.5rem;
   z-index: 99;
-  background-color: orange;
+  background-image: url("../public/Ui.png");
   width: 100px;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-family: "NanumBrush";
+  font-size: 4rem;
   border-radius: 50%;
+  user-select: none;
 }
 
 .levelCompleted {
@@ -37,4 +44,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  user-select: none;
+  pointer-events: none;
 }
+
