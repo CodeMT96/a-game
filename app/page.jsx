@@ -15,11 +15,11 @@ import {
   Ninja,
   Level,
   LevelCollider,
-  Scroll,
   UICollectedItems,
   Lights,
   Lamp,
   Scrolls,
+  UILevelCompleted,
 } from "./components";
 import keyboardMap from "./utility/keyboardControlls";
 import animationSet from "./utility/animationsSet";
@@ -32,6 +32,7 @@ export default function Game() {
     <AppProvider>
       <div className="container">
         <UICollectedItems />
+        <UILevelCompleted />
         <Canvas shadows>
           <Sky
             sunPosition={[0, 0.1, 0.1]}

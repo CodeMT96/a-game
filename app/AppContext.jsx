@@ -4,14 +4,18 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [playerPosition, setPlayerPosition] = useState([0, -0.9, 0]);
-  const [itemsCollected, setItemsCollected] = useState(0);
+  const [itemsCollected, setItemsCollected] = useState(5);
+  const [levelCompleted, setLevelCompleted] = useState(false);
+
   return (
     <AppContext.Provider
       value={{
-        itemsCollected,
         playerPosition,
-        setItemsCollected,
+        itemsCollected,
+        levelCompleted,
         setPlayerPosition,
+        setItemsCollected,
+        setLevelCompleted,
       }}
     >
       {children}

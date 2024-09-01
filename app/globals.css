@@ -24,3 +24,18 @@ body {
   font-size: 2rem;
   border-radius: 50%;
 }
+
+.levelCompleted {
+  position: absolute;
+  top: 0.5rem;
+  right: 45%;
+  z-index: 99;
+  width: auto;
+  height: 50px;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  font-size: 2rem;
+}

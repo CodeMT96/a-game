@@ -6,3 +6,4 @@ export { default as Lamp } from "./Lamps";
 export { default as Scroll } from "./Scroll";
 export { default as Scrolls } from "./Scrolls";
 export { default as UICollectedItems } from "./UICollectedItems";
+export { default as UILevelCompleted } from "./UILevelCompleted";
