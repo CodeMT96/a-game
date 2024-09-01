@@ -8,7 +8,6 @@ import {
   Sky,
   Stars,
 } from "@react-three/drei";
-import Trees from "./components/Trees";
 import { Physics } from "@react-three/rapier";
 import Ecctrl, { EcctrlAnimation } from "ecctrl";
 import {
@@ -18,6 +17,7 @@ import {
   UICollectedItems,
   Lights,
   Lamp,
+  Trees,
   Scrolls,
   UILevelCompleted,
 } from "./components";
