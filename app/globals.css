@@ -27,8 +27,8 @@ body {
 
 .levelCompleted {
   position: absolute;
-  top: 0.5rem;
-  right: 45%;
+  top: 12rem;
+  right: 20%;
   z-index: 99;
   width: auto;
   height: 50px;
@@ -36,6 +36,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
   font-size: 2rem;
 }

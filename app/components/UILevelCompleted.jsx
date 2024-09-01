@@ -6,6 +6,6 @@ export default function UILevelCompleted() {
   if (itemsCollected === 5) setLevelCompleted(true);
 
   return levelCompleted ? (
-    <div className="levelCompleted">Level finished</div>
+    <div className="levelCompleted"><img src="collected.png"/></div>
   ) : null;
 }
