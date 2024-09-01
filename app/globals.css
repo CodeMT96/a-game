@@ -20,7 +20,8 @@ body {
   bottom: 0.5rem;
   right: 0.5rem;
   z-index: 99;
-  background-image: url("../public/Ui.png");
+  background-image: url("/Ui.png");
+  background-color: #e81d18;
   width: 100px;
   height: 100px;
   display: flex;
@@ -35,7 +36,8 @@ body {
 .levelCompleted {
   position: absolute;
   top: 12rem;
-  right: 20%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 99;
   width: auto;
   height: 50px;
@@ -47,4 +49,3 @@ body {
   user-select: none;
   pointer-events: none;
 }
-

@@ -41,12 +41,12 @@ export default function Game() {
             rayleigh={0}
             turbidity={0.01}
           />
-          <Stars depth={200}/>
+          <Stars depth={200} />
           <Physics>
             <Suspense fallback={null}>
               {/* {debugging} */}
               {/* <OrbitControls /> */}
-              <Stats />
+              {/* <Stats /> */}
 
               <KeyboardControls map={keyboardMap}>
                 <Ecctrl animated debug sprintMult={4.0}>

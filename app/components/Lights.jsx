@@ -5,7 +5,7 @@ import { DirectionalLightHelper } from "three";
 export default function Lights() {
   const lightRef = useRef();
 
-  useHelper(lightRef, DirectionalLightHelper, 5, "red");
+  // useHelper(lightRef, DirectionalLightHelper, 5, "red");
 
   return (
     <>
