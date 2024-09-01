@@ -15,12 +15,11 @@ body {
   height: 100vh;
 }
 
-.uiCollected {
+/* .uiCollected {
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
   z-index: 99;
-  background-image: url("/Ui.png");
   background-color: #e81d18;
   width: 100px;
   height: 100px;
@@ -31,6 +30,37 @@ body {
   font-size: 4rem;
   border-radius: 50%;
   user-select: none;
+}
+
+.uiBG {
+  position: absolute;
+} */
+
+.uiCollected {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 99;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "NanumBrush";
+  font-size: 4rem;
+  border-radius: 50%;
+  user-select: none;
+  overflow: hidden;
+  background-color: rgb(245, 187, 29);
+}
+
+.uiBG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 .levelCompleted {
